@@ -8,6 +8,10 @@ enemy_score = 0
 score = 0
 print("[1] - ROCK\n[2] - PAPER\n[3] - SCISSORS\n[4] - EXIT\n")
 
+def show_results():
+    print(f"Opponent's score: {enemy_score}")
+    print(f"Your's score: {score}\n")
+
 while(True):
     try:
         choice = int(input("Choose your move: "))
@@ -21,47 +25,38 @@ while(True):
             if(computer_choice == 2):
                 print(f"Enemy's choice: {p}\nYour's choice: {r}\n")
                 enemy_score += 1
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
             elif(computer_choice == 1):
                 print(f"Enemy's choice: {r}\nYour's choice: {r}\n")
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
             else:
                 print(f"Enemy's choice: {s}\nYour's choice: {r}\n")
                 score += 1
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
         case 2:
             if(computer_choice == 2):
                 print(f"Enemy's choice: {p}\nYour's choice: {p}\n")
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
             elif(computer_choice == 1):
                 print(f"Enemy's choice: {r}\nYour's choice: {p}\n")
                 score += 1
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
             else:
                 print(f"Enemy's choice: {s}\nYour's choice: {p}\n")
                 enemy_score += 1
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
         case 3:
             if(computer_choice == 2):
                 print(f"Enemy's choice: {p}\nYour's choice: {s}\n")
                 score += 1
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
             elif(computer_choice == 1):
                 print(f"Enemy's choice: {r}\nYour's choice: {s}\n")
                 enemy_score += 1
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
             else:
                 print(f"Enemy's choice: {s}\nYour's choice: {s}\n")
-                print(f"Opponent's score: {enemy_score}")
-                print(f"Your's score: {score}\n")
+                show_results()
         case 4:
             print("EXIT.")
             break
