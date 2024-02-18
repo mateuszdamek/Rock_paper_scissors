@@ -4,11 +4,16 @@ r = "Rock"
 p = "Paper"
 s = "Scissors"
 
-choice = int(input("[1] - ROCK\n[2] - PAPER\n[3] - SCISSORS\n[4] - EXIT\nChoose your move: "))
 enemy_score = 0
 score = 0
+print("[1] - ROCK\n[2] - PAPER\n[3] - SCISSORS\n[4] - EXIT\n")
 
-while(choice != 4 and score < 5 and enemy_score < 5):
+while(True):
+    try:
+        choice = int(input("Choose your move: "))
+    except ValueError:
+        print("Only numbers are allowed.")
+        continue
 
     computer_choice = random.randrange(1, 4)
     match choice:
@@ -59,6 +64,7 @@ while(choice != 4 and score < 5 and enemy_score < 5):
                 print(f"Your's score: {score}\n")
         case 4:
             print("EXIT.")
+            break
         case other:
             print("Wrong choice!")
     
@@ -68,5 +74,4 @@ while(choice != 4 and score < 5 and enemy_score < 5):
     elif (enemy_score == 5):
         print("You lose!")
         break
-    else:
-        choice = int(input("Choose your move: "))
+
